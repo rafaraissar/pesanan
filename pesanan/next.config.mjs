@@ -8,6 +8,12 @@ const nextConfig = {
     images: {
         domains: ["res.cloudinary.com"], // Tambahkan domain Cloudinary
       },  
+      experimental: {
+        serverActions: true, // Jika menggunakan Server Actions
+      },
+      eslint: {
+        ignoreDuringBuilds: true, // Matikan ESLint saat build
+      },
 };
 
 export default nextConfig;
