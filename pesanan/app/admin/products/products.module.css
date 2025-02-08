@@ -1,0 +1,128 @@
+.header {
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.headerwrapper {
+  position: fixed;
+  background-color: #ffffff;
+  height: 100%;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #e7e7e7;
+}
+
+.menupilihanwrapper {
+  padding: 0;
+  margin: 0;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.menupilihan {
+  cursor: pointer;
+background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  width: 35px;
+  height: 35px;
+  padding: 5px 5px 5px 5px;
+  margin: 10px 10px 10px 10px;
+  color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.menupilihan:hover {
+ 
+  color: rgba(0, 0, 0, 0.8);  
+}
+
+
+.bodyadmin {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  color: lightslategray;
+  background-color: #faf9f9;
+  padding-left: 90px;
+  padding-top: 20px;
+
+  padding-right: 20px;
+}
+
+.tabadmin {
+  margin-top: 10px;
+  width: 100%;
+
+  padding: 5px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabadminkiri {
+  padding: 5px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  display: flex;
+}
+.tabadminkirilist {
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+}
+
+.tabadminkanan {
+  background-color: #f3f3f3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tabadminkananadd {
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 13px;
+  display: flex;
+  background-color: #121212;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition:0.3s;
+}
+.tabadminkananadd:active {
+ scale: 0.9;
+}
+
+.mainadmin {
+  margin-top: 10px;
+  width: 100%;
+
+  background-color: #ffffff;
+  color: lightslategray;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  padding: 24px;
+}
+
+.juduladmin h3 {
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 600;
+}
