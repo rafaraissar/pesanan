@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import prisma from "@/lib/prisma";
 import { uploadImage } from "@/lib/cloudinary";
 import ProductForm from "./ProductForm";
-
+import { NextResponse } from "next/server";
 async function createProduct(formData) {
   "use server";
 

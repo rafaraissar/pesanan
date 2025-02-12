@@ -8,20 +8,20 @@ datasource db {
 }
 
 model User {
-  id    String @id @default(uuid())
-  name  String
-  email String @unique
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
   createdAt DateTime @default(now())
 }
 
 model Category {
-  id       String   @id @default(uuid())
-  name     String   @unique
+  id       String    @id @default(uuid())
+  name     String    @unique
   products Product[]
 }
 
 model Product {
-  id          String   @id @default(uuid())
+  id          String    @id @default(uuid())
   name        String
   description String?
   price       Float
@@ -29,4 +29,31 @@ model Product {
   categoryId  String?
   category    Category? @relation(fields: [categoryId], references: [id])
   createdAt   DateTime  @default(now())
+  orders      Order[]
+}
+
+model Order {
+  id         String   @id @default(uuid())
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId  String
+  quantity   Int
+  totalPrice Float
+  status     String   @default("pending")
+  pembayaran String   @default("unpaid")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model PushSubscription {
+  id          String @id @default(uuid())
+  endpoint    String @unique
+  keys        Json
+  createdAt   DateTime @default(now())
+}
+
+model Subscription {
+  id        String  @id @default(uuid())
+  endpoint  String  @unique
+  keys      Json
+  createdAt DateTime @default(now())
 }

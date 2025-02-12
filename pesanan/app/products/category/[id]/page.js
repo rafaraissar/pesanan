@@ -1,18 +1,25 @@
-import prisma from "@/lib/prisma";
-import Image from "next/image";
+import prisma from "@/lib/prisma"; 
 import Link from "next/link";
 
-export default async function CategoryPage({ params }) {
-  const categoryId = params.id;
 
+export const revalidate = 3600; // Revalidate setiap 60 detik
+
+// Generate static paths untuk setiap halaman berdasarkan data API
+ 
+
+export default async function CategoryPage({ params }) {
+
+    const { id } = await params; 
+    const categoryId = id; 
+ 
+     
   // Ambil data kategori & produk berdasarkan kategori
   const category = await prisma.category.findUnique({
-    where: { id: categoryId },
+    where: { name: categoryId },
     include: {
       products: true, // Ambil semua produk dalam kategori ini
     },
-  });
-
+  }); 
   if (!category) {
     return <p className="text-center text-red-500">Kategori tidak ditemukan!</p>;
   }

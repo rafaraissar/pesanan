@@ -1,5 +1,5 @@
 "use client";
-
+import { redirect } from "next/navigation";
 import { useState, useTransition } from "react";
 
 export default function ProductForm({ createProduct, categories }) {
@@ -17,6 +17,11 @@ export default function ProductForm({ createProduct, categories }) {
       if (result?.error) {
         setError(result.error);
       }
+      else if (result) {
+        console.log("berhasil");
+        redirect("/admin");  
+
+    }
     });
   };
 

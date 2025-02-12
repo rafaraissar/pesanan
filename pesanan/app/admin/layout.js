@@ -1,19 +1,16 @@
  
- 
 import styles from "./admin.module.css"; 
-import Headeradmin from "./header";
- 
- 
+import Headeradmin from "./header";  
+import Segment from "./segment";
 
-export default function AdminLayout({ children}) {
-  // Await params to ensure we have access to its properties
-  
+export default function AdminLayout({ children, modal}) {
+
   return (
     <section> 
+  {modal}
     <Headeradmin />
     <div className={styles.bodyadmin}>
-    <div className={styles.judulhalaman}>Dashboard</div>
- 
+   <Segment />
         {children}
         </div>
     </section>
